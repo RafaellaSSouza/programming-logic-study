@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+
+
+<script>
+
+
+function pulaLinha() {
+
+	document.write("<br>")
+} 
+
+function mostra(frase) {
+
+	document.write(frase)
+	pulaLinha()
+	
+}
+
+	var numeroPensado = Math.round(Math.random() * 10);
+	var tentativas = 1;
+
+	while(tentativas <= 3) {
+
+		var chute = parseInt(prompt('Adivinhe o número'))
+
+		if (numeroPensado == chute) {
+
+			alert('Você acertou!')
+			mostra('CORRETO! O número pensado era ' + numeroPensado);
+			break;
+
+		} else {
+
+			alert('Você Errou!')
+			mostra('Você ERROU ! O numero pensado era ' + numeroPensado);
+			}
+
+		tentativas++;
+	}
+
+	mostra('FIM');
+
+
+</script>
