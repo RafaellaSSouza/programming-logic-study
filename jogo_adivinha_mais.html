@@ -6,8 +6,44 @@
 
 
 <script>
+
+	function sorteia() {
+
+		return Math.round(Math.random() * 10);
+	}
+
+	function sorteiaNumeros(quantidade) {
+
+		var segredos = [];
+		var numero = 1;
+
+		while(numero <= quantidade) {
+
+			var numeroAleatorio = sorteia();
+			var achou = false;
+
+			if (numeroAleatorio!== 0) {
+
+				for(var posicao = 0; posicao < segredos.length; posicao++) {
+					if (segredos[posicao == numeroAleatorio]) {
+						achou = true;
+						break;
+					}
+				}
+
+				if (achou == false) {
+
+					segredos.push(numeroAleatorio);
+					numero++;
+				}
+			}
+		}
+
+		return segredos;
+	}
+
 	
-	var segredo = [3,5,7,10,2];
+	var segredo = sorteiaNumeros(3);
 
 	var input = document.querySelector("input") ;
 	input.focus();
@@ -37,8 +73,6 @@
 
 	var button = document.querySelector('button');
 	button.onclick = verifica
-
-	
 	
 
 </script>
