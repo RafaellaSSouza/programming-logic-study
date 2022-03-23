@@ -4,37 +4,35 @@
 <script>
 
 
-function pulaLinha() {
+	function pulaLinha() {
+		document.write("<br>")
+	};
 
-	document.write("<br>")
-} 
+	function mostra(frase) {
+		document.write(frase)
+		pulaLinha()
+	};
 
-function mostra(frase) {
+	var vitorias = parseInt(prompt('Número de vitórias'));
+	var empates = parseInt(prompt('Número de empates'));
 
-	document.write(frase)
-	pulaLinha()
-}
+	var pontos = vitorias * 3 + empates;
 
-var vitorias = parseInt(prompt('Número de vitórias'));
-var empates = parseInt(prompt('Número de empates'));
+	mostra('O total de pontos é ' + pontos);
 
-var pontos = vitorias * 3 + empates;
+	if (pontos < 15) {
 
-mostra('O total de pontos é ' + pontos)
+		mostra('Seu time esta pior que ano passado.');
+	};
 
-if (pontos < 15) {
+	if (pontos > 15) {
 
-mostra('Seu time esta pior que ano passado.');
-}
+		mostra('Seu time esta melhor que ano passado.');
+	};
 
-if (pontos > 15) {
-
-mostra('Seu time esta melhor que ano passado.');
-}
-
-if (pontos == 15) {
+	if (pontos == 15) {
 	
-mostra('Seu time esta igual ano passado.')
-}
+		mostra('Seu time esta igual ano passado.')
+	};
 
 </script>
